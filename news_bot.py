@@ -15,4 +15,3 @@ def send_news(bot, chat_id):
             bot.send_message(chat_id, article)
     else:
         bot.send_message(chat_id, 'К сожалению, новостей не найдено.')
-
