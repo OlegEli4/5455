@@ -1,14 +1,14 @@
 import telebot
 import config
 import requests
-
+from telebot import TeleBot, types
 from telebot import types
 from jokes_bot import get_joke, update_joke
 from news_bot import send_news
 
 TOKEN = config.TOKEN
 
-bot = telebot.TeleBot(TOKEN)
+bot = TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
@@ -30,7 +30,7 @@ def send_joke_handler(message):
 @bot.message_handler(func=lambda message: message.text == 'Новости')
 def send_news_handler(message):
     news = requests.get('https://dzen.ru/').text
-    send_news(bot, message.chat.id, news)
+    send_news(bot, message.chat.id)
 
 
 bot.polling(none_stop=True)
