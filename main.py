@@ -32,4 +32,5 @@ def send_news_handler(message):
     news = requests.get('https://dzen.ru/').text
     send_news(bot, message.chat.id, news)
 
+
 bot.polling(none_stop=True)
