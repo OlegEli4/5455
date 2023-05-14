@@ -9,7 +9,7 @@ def get_joke():
     headers = {'Accept': 'application/json'}
     response = requests.get(url, headers=headers)
     import json
-    json_data = json.loads(response.content.decode('utf-8'))
+    json_data = json.loads(response.content.decode('iso-8859-1'))
 
     joke = json_data['content']
     return joke
