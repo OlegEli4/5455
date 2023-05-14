@@ -11,7 +11,7 @@ def get_joke():
     import json
     json_data = json.loads(response.text.encode('utf8').decode())
 
-    joke = json_data['Анекдот']
+    joke = json_data['content']
     return joke
 
 def text_to_speech(joke):
